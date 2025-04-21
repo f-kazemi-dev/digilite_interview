@@ -8,15 +8,6 @@ let sequelizeInstance: Sequelize;
 
 export const initializeDatabase = async (): Promise<Sequelize> => {
   if (!sequelizeInstance) {
-    // if (process.env.NODE_ENV === 'development' && !process.env.DB_HOST) {
-    //   // Use SQLite in development if no PostgreSQL config is provided
-    //   sequelizeInstance = new Sequelize({
-    //     dialect: 'sqlite',
-    //     storage: './database.sqlite',
-    //     logging: (msg) => logger.debug(msg),
-    //   });
-    // } else {
-      // Use PostgreSQL in production or if config is provided
       sequelizeInstance = new Sequelize({
         dialect: 'postgres',
         host: process.env.DB_HOST || 'localhost',
@@ -53,10 +44,3 @@ export const initializeDatabase = async (): Promise<Sequelize> => {
 
   return sequelizeInstance;
 };
-
-// export const getSequelize = (): Sequelize => {
-//   if (!sequelizeInstance) {
-//     throw new Error('Database not initialized. Call initializeDatabase first.');
-//   }
-//   return sequelizeInstance;
-// }; 

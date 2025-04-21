@@ -1,13 +1,13 @@
 {
-  "host": "0.0.0.0",
-  "port": "PORT",
-  "public": "../public/",
+  "host": "localhost",
+  "port": 3030,
+  "public": "./public/",
   "paginate": {
     "default": 10,
     "max": 50
   },
   "authentication": {
-    "secret": "JWT_SECRET",
+    "secret": "your-secret-key",
     "strategies": ["jwt", "local"],
     "path": "/authentication",
     "service": "users",
@@ -24,16 +24,6 @@
     "local": {
       "usernameField": "email",
       "passwordField": "password"
-    }
-  },
-  "postgres": {
-    "client": "pg",
-    "connection": {
-      "host": "DB_HOST",
-      "port": "DB_PORT",
-      "user": "admin",
-      "password": "admin123",
-      "database": "support_tickets"
     }
   }
 } 
