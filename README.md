@@ -28,7 +28,7 @@ This project is a full-stack application designed for managing tickets and repli
    docker-compose up
    ```
 
-   This will start the backend, frontend, and a PostgreSQL database. Ensure that the database environment variables in the `docker-compose.yml` file match the `.env` file located in the `backend` directory. Key variables include:
+   This will start the PostgreSQL database. Ensure that the database environment variables in the `docker-compose.yml` file match the `.env` file located in the `backend` directory. Key variables include:
 
    - `DB_HOST`: Database host (default: `localhost`)
    - `DB_PORT`: Database port (default: `5432`)
