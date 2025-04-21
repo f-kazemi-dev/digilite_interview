@@ -1,0 +1,50 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "./public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "your-secret-key",
+    "strategies": ["jwt", "local"],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "postgres": {
+    "dialect": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "database": "support_tickets",
+    "username": "postgres",
+    "password": "postgres",
+    "logging": false,
+    "dialectOptions": {
+      "ssl": false
+    },
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    },
+    "define": {
+      "freezeTableName": true
+    }
+  }
+} 
