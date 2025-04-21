@@ -16,29 +16,41 @@ This project is a full-stack application designed for managing tickets and repli
 
 ### Setup
 
-1. Clone the repository:
+#### Option 1: Start the Entire Project with Docker Compose (All Services)
 
-   ```bash
-   git clone https://github.com/f-kazemi-dev/digilite_interview.git
-   cd digilite_interview
-   ```
+To start the backend, frontend, and database together, use the following command:
 
-2. Use Docker Compose to start the services:
-   ```bash
-   docker-compose up
-   ```
+```bash
+docker-compose -f docker-compose.all.yml up
+```
 
-   This will start the PostgreSQL database. Ensure that the database environment variables in the `docker-compose.yml` file match the `.env` file located in the `backend` directory. Key variables include:
+This will build and start all services (backend, frontend, and PostgreSQL database) in one step.
 
-   - `DB_HOST`: Database host (default: `localhost`)
-   - `DB_PORT`: Database port (default: `5432`)
-   - `DB_NAME`: Database name (default: `support_tickets`)
-   - `DB_USER`: Database username (default: `postgres`)
-   - `DB_PASSWORD`: Database password (default: `postgres`)
+#### Option 2: Start Only the Database with Docker Compose
 
-   For more details, refer to the `README.md` file in the `backend` directory.
+If you only want to start the PostgreSQL database, use the following command:
 
-3. Alternatively, you can set up the backend and frontend manually. Refer to the respective `README.md` files in the `backend` and `frontend` directories for detailed instructions.
+```bash
+docker-compose up -d
+```
+
+This will start the database in detached mode. To run the backend and frontend, follow the instructions in their respective `README.md` files located in the `backend/` and `frontend/` directories.
+
+#### Option 3: Use Makefile for Simplified Commands
+
+The `Makefile` provides shortcuts for common tasks. To start the entire project, run:
+
+```bash
+make all
+```
+
+This command will:
+1. Start the database.
+2. Install dependencies for the backend and frontend.
+3. Apply database migrations.
+4. Start the backend and frontend development servers.
+
+Refer to the `Makefile` section below for more details on available commands.
 
 ## Project Structure
 
