@@ -16,17 +16,7 @@ This project is a full-stack application designed for managing tickets and repli
 
 ### Setup
 
-#### Option 1: Start the Entire Project with Docker Compose (All Services)
-
-To start the backend, frontend, and database together, use the following command:
-
-```bash
-docker-compose -f docker-compose.all.yml up
-```
-
-This will build and start all services (backend, frontend, and PostgreSQL database) in one step.
-
-#### Option 2: Start Only the Database with Docker Compose
+#### Option 1: Start Only the Database with Docker Compose
 
 If you only want to start the PostgreSQL database, use the following command:
 
@@ -36,7 +26,7 @@ docker-compose up -d
 
 This will start the database in detached mode. To run the backend and frontend, follow the instructions in their respective `README.md` files located in the `backend/` and `frontend/` directories.
 
-#### Option 3: Use Makefile for Simplified Commands
+#### Option 2: Use Makefile for Simplified Commands
 
 The `Makefile` provides shortcuts for common tasks. To start the entire project, run:
 
@@ -51,6 +41,16 @@ This command will:
 4. Start the backend and frontend development servers.
 
 Refer to the `Makefile` section below for more details on available commands.
+
+#### Option 3: Start the Entire Project with Docker Compose (All Services) [Not Recommended]
+
+To start the backend, frontend, and database together, use the following command:
+
+```bash
+docker-compose -f docker-compose.all.yml up
+```
+
+**Note:** This option is not recommended as it may lead to less control over individual services and debugging issues. It is better to start services individually or use the `Makefile` for better management.
 
 ## Project Structure
 
