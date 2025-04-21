@@ -121,7 +121,6 @@ This structure ensures a clean separation of concerns, making the codebase maint
 
 ## Key Features
 
-- **Feature-Sliced Design (FSD):** The project follows a modular structure inspired by FSD principles, ensuring maintainability and scalability.
 - **Custom Middleware:** Includes middleware for authentication, request ID generation, and logging.
 - **Automatic Transaction Management:** Ensures data consistency during multi-step database operations.
 - **Comprehensive API:** Provides endpoints for managing tickets, replies, and user authentication.
@@ -154,11 +153,25 @@ This structure ensures a clean separation of concerns, making the codebase maint
 
 The backend application is built using Node.js and PostgreSQL. It provides a comprehensive set of API endpoints for managing tickets and replies, including functionalities for creating, reading, updating, and deleting records. Additionally, the API supports advanced features such as filtering and sorting of tickets based on various criteria, allowing for flexible data retrieval.
 
-During the development of this backend, the **Feature-Sliced Design (FSD)** architectural pattern was considered as a guiding principle for structuring the codebase. However, to avoid unnecessary complexity and over-engineering, full adherence to every aspect of FSD was selectively applied where it offered clear benefits to the project's maintainability and scalability.
+The project is structured to ensure maintainability and scalability, with a focus on modularity. The codebase is organized to separate concerns effectively, leveraging FeathersJS conventions. Services, models, and other components are centralized to align with the framework's simplicity and ease of use.
 
 One notable customization implemented was the addition of a **custom context** to the request objects. This enhancement allows for more streamlined management of cross-cutting concerns such as logging and access to the database instance within the request lifecycle. By embedding relevant services and configurations directly within the request context, we aim to simplify the implementation of features that require these functionalities.
 
 Furthermore, **automatic transaction management** was implemented for database operations that occur within a parent scope. This feature ensures data consistency and simplifies the handling of complex, multi-step database interactions by automatically managing the lifecycle of transactions.
+
+## Advanced Features and Recommendations
+
+- **FeathersJS Framework**: The backend leverages FeathersJS, which simplifies the creation of RESTful APIs and WebSocket support. This framework is ideal for rapid development and scalability.
+- **Centralized Logging**: A custom logger utility is implemented to provide centralized logging, which is essential for debugging and monitoring.
+- **TypeScript Integration**: The use of TypeScript ensures type safety and reduces runtime errors, making the codebase more robust.
+- **Database Migrations**: The project uses Sequelize for database migrations, ensuring schema consistency across environments.
+
+### Recommendations for Improvement
+
+1. **Feature-Based Organization**: To improve maintainability, consider restructuring the codebase to group related files (e.g., services, models, migrations) by feature.
+2. **Testing Coverage**: Expand unit and integration tests to cover all critical functionalities.
+3. **Error Handling**: Implement more robust error handling mechanisms to ensure graceful degradation in case of failures.
+4. **Documentation**: Enhance inline documentation to improve developer onboarding and code readability.
 
 ## API Endpoints
 

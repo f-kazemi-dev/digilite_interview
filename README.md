@@ -126,6 +126,8 @@ The backend is a FeathersJS application that provides a RESTful API and WebSocke
 - Role-based access control
 - Database migrations
 
+The project is structured to ensure maintainability and scalability, with a focus on modularity. While it does not fully adhere to the **Feature-Sliced Design (FSD)** architectural pattern, the codebase is organized to separate concerns effectively within the FeathersJS framework.
+
 For detailed setup and usage instructions, refer to the `backend/README.md` file.
 
 ## Frontend
