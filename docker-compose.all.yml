@@ -16,6 +16,8 @@ services:
     depends_on:
       - database
     command: ["sh", "-c", "npm run migrate:up && npm run dev"]
+    networks:
+      - ticket-network-all
 
   frontend:
     build:
@@ -25,6 +27,8 @@ services:
       - "3000:3000"
     depends_on:
       - backend
+    networks:
+      - ticket-network-all
 
   database:
     image: postgres:latest
@@ -36,6 +40,12 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - ticket-network-all
 
 volumes:
   postgres_data:
+  
+networks:
+  ticket-network-all:
+    driver: bridge

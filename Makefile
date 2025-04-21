@@ -1,6 +1,6 @@
-.PHONY: all db-up inst-back inst-front mig-up run-back run-front
+.PHONY: all db-up inst-back inst-front mig-up run-back-bg run-front run-back-bg
 
-all: db-up inst-back inst-front mig-up run-back run-front
+all: db-up inst-back inst-front mig-up run-back-bg run-front
 
 db-up:
 	docker compose up -d
@@ -19,6 +19,9 @@ mig-down:
 
 run-back:
 	cd backend && yarn run dev
+
+run-back-bg:
+	cd backend && yarn run dev &
 
 run-front:
 	cd frontend && yarn run start
