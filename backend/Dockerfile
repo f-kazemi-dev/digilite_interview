@@ -13,8 +13,15 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
+# Set permissions for the working directory
+RUN chown -R node:node /app
+USER node
+
+# Debugging step to check Node.js and npm versions
+RUN node -v && npm -v
+
 # Expose the application port
 EXPOSE 3030
 
-# Start the application
-CMD ["npm", "start"]
+# Default command to run the application in development mode
+CMD ["npm", "run", "dev"]
