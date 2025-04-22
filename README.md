@@ -42,7 +42,7 @@ This command will:
 
 Refer to the `Makefile` section below for more details on available commands.
 
-#### Option 3: Start the Entire Project with Docker Compose (All Services) [Not Recommended]
+#### Option 3: Start the Entire Project with Docker Compose (All Services)
 
 To start the backend, frontend, and database together, use the following command:
 
@@ -50,7 +50,7 @@ To start the backend, frontend, and database together, use the following command
 docker-compose -f docker-compose.all.yml up
 ```
 
-**Note:** This option is not recommended as it may lead to less control over individual services and debugging issues. It is better to start services individually or use the `Makefile` for better management.
+**Note:** This option is not recommended as it may lead to less control over individual services and debugging issues. It is better to start services individually for better management.
 
 ## Project Structure
 
