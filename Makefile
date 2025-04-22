@@ -1,4 +1,4 @@
-.PHONY: all db-up inst-back inst-front mig-up run-back-bg run-front run-back-bg
+.PHONY: all db-up inst-back inst-front mig-up run-back-bg run-front
 
 all: db-up inst-back inst-front mig-up run-back-bg run-front
 
